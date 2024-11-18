@@ -6,7 +6,7 @@ export default function HomeProductListScreen() {
         fetchHomeProduct();
     return (
     <View>
-      <Text>HomeProductListScreen</Text>
+      <Text></Text>
     </View>
   )
 }

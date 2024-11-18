@@ -8,8 +8,8 @@ function WelcomeView() {
     return (
       <View>
         <View>
-            <Text style={styles.welcomeTxt(theme.colors.black, 70)}>Find The Most</Text>
-            <Text style={styles.welcomeTxt(theme.colors.primary, 0)}>Luxurious Furniture</Text>
+            <Text style={styles.welcomeTxt(theme.colors.black, 70)}>MAP</Text>
+            <Text style={styles.welcomeTxt(theme.colors.primary, 0)}>For Coaches</Text>
         </View>
         <View style={styles.searchContainer}>
             <TouchableOpacity onPress={()=>{

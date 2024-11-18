@@ -7,25 +7,32 @@ import LottieView from 'lottie-react-native';
 const localProductList = [
   {
       id: "1A",
-      title:"colorful furniture",
-      price:"$100",
-      path: require("../../assets/images/fn3.jpg"),
+      title:"FOOTBALL",
+      //price:"",
+      path: require("../../assets/images/football-2.jpg"),
   },
   {
       id: "1B",
-      title:"comfy sofa",
-      price:"$200",
-      path: require("../../assets/images/fn2.jpg"),
+      title:"BASKETBALL",
+      //price:"",
+      path: require("../../assets/images/basketball-1.jpg"),
   },
   {
       id: "1C",
-      title:"Beautiful home furniture",
-      price:"$400",
-      path: require("../../assets/images/fn1.jpg"),
-  }
+      title:"SOCCER",
+      //price:"$400",
+      path: require("../../assets/images/soccer-2.jpg"),
+  },
+  {
+    id: "1D",
+    title:"VOLLEYBALL",
+    //price:"$400",
+    path: require("../../assets/images/volleyball-1.jpg"),
+},
+
 ];
 
-export default function ProductList() {
+export default function SportsList() {
   
   const [loading, setLoading] = useState(true);
 

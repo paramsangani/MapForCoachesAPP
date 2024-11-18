@@ -6,15 +6,19 @@ const {width} = Dimensions.get("window");
 const images = [
     {
         id: "1A",
-        path: require("../../assets/images/fn3.jpg"),
+        path: require("../../assets/images/american-football-1.jpg"),
     },
     {
         id: "1B",
-        path: require("../../assets/images/fn2.jpg"),
+        path: require("../../assets/images/basketball-2.jpg"),
     },
     {
         id: "1C",
-        path: require("../../assets/images/fn1.jpg"),
+        path: require("../../assets/images/soccer-1.jpg"),
+    },
+    {
+        id: "1D",
+        path: require("../../assets/images/volleyball-2.jpg"),
     }
 ];
 

@@ -5,7 +5,7 @@ import HomeScreen from './HomeScreen';
 import { Ionicons } from '@expo/vector-icons';
 import { theme } from '../constants/theme';
 import ProfileScreen from './ProfileScreen';
-import CartScreen from './CartScreen';
+import FootballScreen from './FootballScreen';
 import SearchScreen from './SearchScreen';
 
 const Tabs = createBottomTabNavigator();
@@ -50,7 +50,7 @@ export default function BottomTabs() {
         />
 
         <Tabs.Screen 
-            name = "CartScreen" component = {CartScreen}
+            name = "FootballScreen" component = {FootballScreen}
             options={{
                 headerShown:false,
                 tabBarIcon:({focused}) =>{
@@ -72,7 +72,7 @@ export default function BottomTabs() {
                 tabBarIcon:({focused}) =>{
                     return (
                         <Ionicons
-                            name={focused?"search": 'search-outline'}
+                            name={focused?"volleyball": 'volleyball-outline'}
                             size={theme.sizes.xLarge}
                             color={theme.colors.primary}
                         />

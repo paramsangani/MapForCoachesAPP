@@ -9,9 +9,9 @@ const HomeHeadingComponent = () => {
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.headerTitle}>
-                    New Rivals
+                    Choose your Sport:
                 </Text>
-                <TouchableOpacity onPress={()=>nav.navigate("ProductList")}>
+                <TouchableOpacity onPress={()=>nav.navigate("SportsList")}>
                     <Entypo name="grid" size={24}/>
                 </TouchableOpacity>
             </View>
