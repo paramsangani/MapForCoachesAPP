@@ -9,7 +9,7 @@ const HomeHeadingComponent = () => {
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.headerTitle}>
-                    Choose your Sport:
+                    Choose your Sport
                 </Text>
                 <TouchableOpacity onPress={()=>nav.navigate("SportsList")}>
                     <Entypo name="grid" size={24}/>
