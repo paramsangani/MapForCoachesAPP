@@ -1,25 +1,58 @@
-import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./pages/Layout";
-import Home from "./pages/Home";
-import Blogs from "./pages/Blogs";
-import Contact from "./pages/Contact";
-import NoPage from "./pages/NoPage";
+import HomeScreen from "./src/screens/HomeScreen";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import ProductList from "./src/screens/ProductListScreen";
+import { useFonts } from "expo-font";
+import { Roboto_400Regular, Roboto_700Bold } from "@expo-google-fonts/roboto";
+import { useCallback } from "react";
+import * as SplashScreen from 'expo-splash-screen';
+import BottomTabs from "./src/screens/BottomTabs";
+
+const Stack = createNativeStackNavigator();
+
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
+
+  let[fontsLoaded]=useFonts({
+    Roboto_400Regular,
+    Roboto_700Bold
+  });
+
+  const onLayoutRootView = useCallback(async()=>{
+    if(fontsLoaded){
+        console.log("events triggered ", fontsLoaded);
+      await SplashScreen.hideAsync();
+    }
+  },[fontsLoaded]);
+
+  
+  if(!fontsLoaded){
+    console.log("Fonts not loaded");
+    return null;
+  }else{
+    console.log("Fonts loaded")
+  }
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="blogs" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <NavigationContainer onReady={onLayoutRootView}>
+      <Stack.Navigator screenOptions={{
+        tabBarStyle: {
+          position: "absolute",
+          bottom: 0,
+          right: 0,
+          left:0,
+          elevation: 0,
+          height: 70,
+        },
+      }}>
+        <Stack.Screen name = "BottomTabs" component = {BottomTabs}
+        options={{
+          headerShown:false,
+        }}
+        />
+        <Stack.Screen name = "ProductList" component = {ProductList}/>
+      </Stack.Navigator >
+    </NavigationContainer>
   );
 }
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
