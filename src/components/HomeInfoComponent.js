@@ -13,7 +13,7 @@ export default function HomeInfoComponent() {
       </Text>
       <Text style={{ fontSize: 14, textAlign: 'justify' }}>
         The MAP for Coaches is a novel eLearning tool for youth sports coaches to increase their knowledge regarding
-        sports-related <Text style={{ fontWeight: 'bold' }}>M</Text>usculoskeletal injuries and best injury
+        sports-related Musculoskeletal injuries and best injury
         prevention practices towards reducing injuries and enhancing performance in youth sport athletes.
       </Text>
     </View>

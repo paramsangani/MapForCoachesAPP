@@ -2,46 +2,48 @@ import { StyleSheet } from "react-native";
 import { theme } from "../constants/theme";
 
 const styles = StyleSheet.create({
-    searchWrapper:{
-        flex:1,
-        backgroundColor:theme.colors.secondary,
-        borderRadius:theme.sizes.small,
-        marginRight:theme.sizes.small
+    logoContainer: {
+        width: "100%", 
+        backgroundColor: theme.colors.gray, 
+        alignItems: "center", 
+        padding: theme.sizes.small,
     },
-    searchBtn:{
+    logo: {
+        width: 140, 
+        height: 55, 
+    },
+    searchWrapper: {
+        flex: 1,
+        backgroundColor: theme.colors.secondary,
+        borderRadius: theme.sizes.small,
+        marginRight: theme.sizes.small,
+    },
+    searchBtn: {
         width: 50,
         backgroundColor: theme.colors.primary,
         justifyContent: "center",
         alignItems: "center",
-        borderRadius:theme.sizes.medium
+        borderRadius: theme.sizes.medium,
     },
-    welcomeTxt:(color, top)=>(
-    {
-        fontSize:theme.sizes.XXLarge-6,
-        color: color,
-        marginTop: top,
-        marginHorizontal:theme.sizes.small
-    }),
-
-    searchIcon:{
+    searchIcon: {
         marginTop: theme.sizes.small,
         color: theme.colors.gray,
-        marginHorizontal:theme.sizes.xSmall
+        marginHorizontal: theme.sizes.xSmall,
     },
-    searchContainer:{
+    searchContainer: {
         flexDirection: "row",
         justifyContent: "center",
         height: 50,
-        marginHorizontal:theme.sizes.small,
+        marginHorizontal: theme.sizes.small,
         backgroundColor: theme.colors.secondary,
         borderRadius: theme.sizes.medium,
-        marginVertical:theme.sizes.medium,
+        marginVertical: theme.sizes.medium,
     },
-    searchInput:{
+    searchInput: {
         width: "100%",
-        height:"100%",
-        paddingHorizontal: theme.sizes.small
-    }
-  });
+        height: "100%",
+        paddingHorizontal: theme.sizes.small,
+    },
+});
 
-  export default styles;
+export default styles;

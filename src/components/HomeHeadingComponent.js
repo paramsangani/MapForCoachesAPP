@@ -12,7 +12,7 @@ const HomeHeadingComponent = () => {
                     Choose your Sport
                 </Text>
                 <TouchableOpacity onPress={()=>nav.navigate("SportsList")}>
-                    <Entypo name="grid" size={24}/>
+                    <Entypo name="grid" size={45}/>
                 </TouchableOpacity>
             </View>
         </View>

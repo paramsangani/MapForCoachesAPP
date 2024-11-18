@@ -1,79 +1,70 @@
-import { View,Text, FlatList} from 'react-native'
-import React, {useState, useEffect} from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import ProductCardComponent from '../components/ProductCardComponent';
+import { View, FlatList } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import LottieView from 'lottie-react-native';
+import ProductCardComponent from '../components/ProductCardComponent';
 
 const localProductList = [
-  {
-      id: "1A",
-      title:"FOOTBALL",
-      //price:"",
-      path: require("../../assets/images/football-2.jpg"),
-  },
-  {
-      id: "1B",
-      title:"BASKETBALL",
-      //price:"",
-      path: require("../../assets/images/basketball-1.jpg"),
-  },
-  {
-      id: "1C",
-      title:"SOCCER",
-      //price:"$400",
-      path: require("../../assets/images/soccer-2.jpg"),
-  },
-  {
-    id: "1D",
-    title:"VOLLEYBALL",
-    //price:"$400",
-    path: require("../../assets/images/volleyball-1.jpg"),
-},
-
+  { id: "1A", title: "FOOTBALL", path: require("../../assets/images/football-2.jpg") },
+  { id: "1B", title: "BASKETBALL", path: require("../../assets/images/basketball-1.jpg") },
+  { id: "1C", title: "SOCCER", path: require("../../assets/images/soccer-2.jpg") },
+  { id: "1D", title: "VOLLEYBALL", path: require("../../assets/images/volleyball-1.jpg") },
 ];
 
-export default function SportsList() {
-  
+export default function SportsList({ navigation }) {
   const [loading, setLoading] = useState(true);
 
-  useEffect(()=>{
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-    return ()=>clearTimeout(timer);
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
   }, []);
-
 
   if (loading) {
     return (
-      <View style={{ justifyContent:"center", alignItems:"center", flex: 1}}>
-        <LottieView 
+      <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
+        <LottieView
           source={require("../../assets/jsons/animation2.json")}
           autoPlay
-          style={{width:150, height:150}}
+          style={{ width: 150, height: 150 }}
           loop
         />
       </View>
     );
   }
 
+  const renderItem = ({ item }) => (
+    <ProductCardComponent
+      item={item}
+      onPress={() => {
+        switch (item.title) {
+          case "FOOTBALL":
+            navigation.navigate("Football");
+            break;
+          case "BASKETBALL":
+            navigation.navigate("Basketball");
+            break;
+          case "SOCCER":
+            navigation.navigate("Soccer");
+            break;
+          case "VOLLEYBALL":
+            navigation.navigate("Volleyball");
+            break;
+          default:
+            navigation.navigate("SportDetail", { item });
+        }
+      }}
+    />
+  );
 
-  const renderItem = ({item})=>{
-    console.log("The vaue of loading is point 1", loading);
-
-    return (
-      <ProductCardComponent item={item}/>
-    );
-  }
   return (
     <SafeAreaView>
-      <FlatList 
+      <FlatList
         data={localProductList}
         renderItem={renderItem}
-        keyExtractor={(item)=>item.id}
+        keyExtractor={(item) => item.id}
         numColumns={2}
+        contentContainerStyle={{ padding: 10 }} // Adjust padding for a better layout
       />
     </SafeAreaView>
-  )
+  );
 }
-

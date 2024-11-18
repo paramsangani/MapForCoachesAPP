@@ -1,3 +1,4 @@
+import React, { useRef, useEffect, useState } from "react";
 import { Text, View, Image, FlatList, Dimensions } from "react-native";
 import { theme } from "../constants/theme";
 
@@ -19,10 +20,28 @@ const images = [
     {
         id: "1D",
         path: require("../../assets/images/volleyball-2.jpg"),
-    }
+    },
 ];
 
 const HomeCarouselComponent = () => {
+    const flatListRef = useRef(null);
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => {
+                const nextIndex = (prevIndex + 1) % images.length;
+                flatListRef.current?.scrollToOffset({
+                    offset: nextIndex * (width - 2 * theme.sizes.medium),
+                    animated: true,
+                });
+                return nextIndex;
+            });
+        }, 3500); //time for carosel movement
+
+        return () => clearInterval(interval); 
+    }, []);
+
     return (
         <View>
             <View
@@ -37,13 +56,14 @@ const HomeCarouselComponent = () => {
                 }}
             >
                 <FlatList
+                    ref={flatListRef}
                     data={images}
                     renderItem={({ item }) => (
                         <Image
                             style={{
-                                width: width - 2 * theme.sizes.medium, 
+                                width: width - 2 * theme.sizes.medium,
                                 height: "100%",
-                                resizeMode: "cover", 
+                                resizeMode: "cover",
                             }}
                             source={item.path}
                         />
@@ -54,7 +74,7 @@ const HomeCarouselComponent = () => {
                     showsHorizontalScrollIndicator={false}
                     snapToAlignment="center"
                     decelerationRate="fast"
-                    snapToInterval={width - 2 * theme.sizes.medium} 
+                    snapToInterval={width - 2 * theme.sizes.medium}
                 />
             </View>
         </View>
