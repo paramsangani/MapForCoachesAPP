@@ -15,6 +15,12 @@ export default function SportsList({ navigation }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    navigation.setOptions({
+      headerBackTitle: "Go Back",
+    });
+  }, [navigation]);
+
+  useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
@@ -63,7 +69,7 @@ export default function SportsList({ navigation }) {
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
         numColumns={2}
-        contentContainerStyle={{ padding: 10 }} // Adjust padding for a better layout
+        contentContainerStyle={{ padding: 10 }}
       />
     </SafeAreaView>
   );

@@ -1,7 +1,13 @@
 import { View, Text, StyleSheet } from 'react-native';
-import React from 'react';
+import React, { useEffect } from 'react';
 
-export default function Soccer() {
+export default function Soccer({ navigation }) {
+  useEffect(() => {
+    navigation.setOptions({
+      headerBackTitle: "Sports List",
+    });
+  }, [navigation]);
+
   return (
     <View style={styles.container}>
       <Text style={styles.header}>COMING SOON</Text>

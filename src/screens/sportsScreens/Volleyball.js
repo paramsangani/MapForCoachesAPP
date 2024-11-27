@@ -1,12 +1,18 @@
 import { View, Text, StyleSheet } from 'react-native';
-import React from 'react';
+import React, { useEffect } from 'react';
 
-export default function Volleyball() {
+export default function Soccer({ navigation }) {
+  useEffect(() => {
+    navigation.setOptions({
+      headerBackTitle: "Sports List",
+    });
+  }, [navigation]);
+
   return (
     <View style={styles.container}>
       <Text style={styles.header}>COMING SOON</Text>
       <Text style={styles.body}>
-        The MAP for Coaches’ Injury Prevention Training Course for Youth Soccer Coaches is under development and will be available soon.
+        The MAP for Coaches’ Injury Prevention Training Course for Youth Volleyball Coaches is under development and will be available soon.
       </Text>
       <Text style={styles.body}>
         Please contact our team at <Text style={styles.email}>tip.lab@health.slu.edu</Text> for additional information.

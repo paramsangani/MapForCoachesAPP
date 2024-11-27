@@ -32,6 +32,21 @@ export default function BottomTabs() {
                 }
             }}
         />
+            <Tabs.Screen 
+            name = "About Page" component = {AboutPage}
+            options={{
+                headerShown:false,
+                tabBarIcon:({focused}) =>{
+                    return (
+                        <Ionicons
+                            name={focused?"document-text": 'document-text-outline'}
+                            size={theme.sizes.xLarge}
+                            color={theme.colors.primary}
+                        />
+                    );
+                }
+            }}
+        />
 
         <Tabs.Screen 
             name = "ProfileScreen" component = {ProfileScreen}
@@ -57,22 +72,6 @@ export default function BottomTabs() {
                     return (
                         <Ionicons
                             name={focused?"american-football": 'american-football-outline'}
-                            size={theme.sizes.xLarge}
-                            color={theme.colors.primary}
-                        />
-                    );
-                }
-            }}
-        />
-
-        <Tabs.Screen 
-            name = "About Page" component = {AboutPage}
-            options={{
-                headerShown:false,
-                tabBarIcon:({focused}) =>{
-                    return (
-                        <Ionicons
-                            name={focused?"document-text": 'document-text-outline'}
                             size={theme.sizes.xLarge}
                             color={theme.colors.primary}
                         />
