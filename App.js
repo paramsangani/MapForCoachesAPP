@@ -11,6 +11,7 @@ import Football from "./src/screens/sportsScreens/Football";
 import Basketball from "./src/screens/sportsScreens/Basketball";
 import Soccer from "./src/screens/sportsScreens/Soccer";
 import Volleyball from "./src/screens/sportsScreens/Volleyball";
+import ProfileScreen from './src/screens/ProfileScreen'; 
 
 const Stack = createNativeStackNavigator();
 
@@ -64,6 +65,12 @@ export default function App() {
         <Stack.Screen name="Basketball" component={Basketball} />
         <Stack.Screen name="Soccer" component={Soccer} />
         <Stack.Screen name="Volleyball" component={Volleyball} />
+        {/* Add the ProfileScreen to the navigator */}
+        <Stack.Screen 
+          name="Profile" 
+          component={ProfileScreen} 
+          options={{ title: "Profile" }} 
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
