@@ -12,7 +12,7 @@ import Basketball from "./src/screens/sportsScreens/Basketball";
 import Soccer from "./src/screens/sportsScreens/Soccer";
 import Volleyball from "./src/screens/sportsScreens/Volleyball";
 import ProfileScreen from './src/screens/ProfileScreen'; 
-import FootballQuestions from "./src/screens/FootballQuestions"; // Import FootballQuestions
+import FootballQuestions from "./src/components/FootballQuestions"; // Import FootballQuestions
 
 const Stack = createNativeStackNavigator();
 
