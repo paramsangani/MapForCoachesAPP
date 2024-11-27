@@ -12,6 +12,7 @@ import Basketball from "./src/screens/sportsScreens/Basketball";
 import Soccer from "./src/screens/sportsScreens/Soccer";
 import Volleyball from "./src/screens/sportsScreens/Volleyball";
 import ProfileScreen from './src/screens/ProfileScreen'; 
+import FootballQuestions from "./src/screens/FootballQuestions"; // Import FootballQuestions
 
 const Stack = createNativeStackNavigator();
 
@@ -70,6 +71,12 @@ export default function App() {
           name="Profile" 
           component={ProfileScreen} 
           options={{ title: "Profile" }} 
+        />
+        {/* Add FootballQuestions screen */}
+        <Stack.Screen 
+          name="FootballQuestions" 
+          component={FootballQuestions} 
+          options={{ title: "Football Questions" }} 
         />
       </Stack.Navigator>
     </NavigationContainer>

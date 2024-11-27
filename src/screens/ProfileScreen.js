@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
 
-export default function LoginScreen({ navigation }) {
+export default function ProfileScreen({ navigation }) {
   const [screen, setScreen] = useState('login'); // Track which screen to show
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -17,7 +17,7 @@ export default function LoginScreen({ navigation }) {
 
   const handleLogin = () => {
     if (username === 'admin' && password === '1234') {
-      navigation.navigate('Cart');
+      navigation.navigate('FootballQuestions'); // Navigate to FootballQuestions after login
     } else {
       alert('Invalid username or password');
     }

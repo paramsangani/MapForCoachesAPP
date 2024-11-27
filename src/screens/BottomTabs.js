@@ -64,6 +64,7 @@ export default function BottomTabs() {
             }}
         />
 
+        {/* 
         <Tabs.Screen 
             name = "FootballScreen" component = {FootballScreen}
             options={{
@@ -79,6 +80,7 @@ export default function BottomTabs() {
                 }
             }}
         />
+         */}
     </Tabs.Navigator>
   )
 }
