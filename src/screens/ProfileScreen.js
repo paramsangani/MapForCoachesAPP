@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 
 export default function LoginScreen({ navigation }) {
+
+  useEffect(() => {
+    navigation.setOptions({
+      headerBackTitle: "Home",
+    });
+  }, [navigation]);
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
