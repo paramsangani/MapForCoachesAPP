@@ -16,7 +16,8 @@ export default function SportsList({ navigation }) {
 
   useEffect(() => {
     navigation.setOptions({
-      headerBackTitle: "Go Back",
+      title: 'Sports',
+      headerBackTitle: "Home",
     });
   }, [navigation]);
 
