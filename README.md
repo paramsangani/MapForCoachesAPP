@@ -59,15 +59,12 @@ MapAPP/
 ## Technologies Used
 - React Native
 - Expo
-- [List any other key technologies or libraries]
 
 ## Features
-- [Feature 1]
-- [Feature 2]
-- [Feature 3]
+- Information about 4 different sports
+- Login for users
+- Similar to the website: https://mapforcoaches.net/
 
-## Configuration
-[Any specific configuration steps or environment variables]
 
 ## Troubleshooting
 - Ensure you have the latest version of Expo CLI
@@ -81,10 +78,8 @@ MapAPP/
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## License
-[Specify your license, e.g., MIT License]
 
 ## Contact
-[Your Name] - [Your Email]
+[Param Sangani] - [param.sangani@slu.edu]
 
 Project Link: [https://github.com/yourusername/MapAPP](https://github.com/yourusername/MapAPP)
