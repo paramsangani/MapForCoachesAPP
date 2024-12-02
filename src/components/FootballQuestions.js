@@ -98,7 +98,7 @@ const App = () => {
       />
       
       <View style={styles.datePickerContainer}>
-        <Text>Date: {formData.date || "Not selected"}</Text>
+        <Text style={{ textAlign: 'center' }}>Date: {formData.date || "Not selected"}</Text>
         <Button title="Pick a Date" onPress={() => setShowDatePicker(true)} />
         {showDatePicker && (
           <DateTimePicker
@@ -122,7 +122,7 @@ const App = () => {
       </View>
       
       <View style={styles.pickerContainer}>
-        <Text>State of Residence</Text>
+        <Text style={{ textAlign: 'center' }}>State of Residence</Text>
         <Picker
           selectedValue={formData.state}
           onValueChange={(itemValue) => handleInputChange('state', itemValue)}
@@ -135,7 +135,7 @@ const App = () => {
       </View>
       
       <View style={styles.pickerContainer}>
-        <Text>Work Setting</Text>
+        <Text style={{ textAlign: 'center' }}>Work Setting</Text>
         <Picker
           selectedValue={formData.workSetting}
           onValueChange={(itemValue) => handleInputChange('workSetting', itemValue)}
@@ -157,7 +157,7 @@ const App = () => {
       )}
       
       <View style={styles.pickerContainer}>
-        <Text>Ethnicity</Text>
+        <Text style={{ textAlign: 'center' }}>Ethnicity</Text>
         <Picker
           selectedValue={formData.ethnicity}
           onValueChange={(itemValue) => handleInputChange('ethnicity', itemValue)}
@@ -180,7 +180,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#f5f5f5'
+    backgroundColor: '#f5f5f5',
+    textAlign: 'center',
   },
   title: {
     fontSize: 20,
@@ -194,23 +195,34 @@ const styles = StyleSheet.create({
     padding: 10,
     marginBottom: 10,
     borderRadius: 5,
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    textAlign: 'center',
   },
   pickerContainer: {
     marginBottom: 10,
     backgroundColor: 'white',
     borderRadius: 5,
     borderWidth: 1,
-    borderColor: '#ddd'
+    borderColor: '#ddd',
+    padding: 10, // Ensure uniform padding
+    justifyContent: 'center', // Vertically align text and picker
+  },
+  pickerLabel: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center', // Center the text horizontally
+    marginBottom: 5, // Add space between label and Picker
   },
   datePickerContainer: {
-    marginBottom: 20
+    marginBottom: 20,
+    textAlign: 'center',
   },
   errorText: {
     color: 'red',
     fontSize: 12,
     marginTop: -5,
-    marginBottom: 10
+    marginBottom: 10,
+    textAlign: 'center',
   }
 });
 
