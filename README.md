@@ -64,6 +64,7 @@ MapAPP/
 - Information about 4 different sports
 - Login for users
 - Similar to the website: https://mapforcoaches.net/
+- Saving responses by the user
 
 
 ## Troubleshooting
