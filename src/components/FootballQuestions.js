@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, Button, ScrollView } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 const US_STATES = [
   'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 
@@ -34,6 +35,9 @@ const App = () => {
     ethnicity: ''
   });
 
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [phoneError, setPhoneError] = useState('');
+
   const handleInputChange = (field, value) => {
     setFormData(prev => ({
       ...prev,
@@ -41,10 +45,37 @@ const App = () => {
     }));
   };
 
+  const formatPhoneNumber = (text) => {
+    const cleaned = text.replace(/\D+/g, ''); 
+    const match = cleaned.match(/^(\d{1,3})(\d{0,3})(\d{0,4})$/);
+    if (match) {
+      const formatted = `${match[1]}${match[2] ? `-${match[2]}` : ''}${match[3] ? `-${match[3]}` : ''}`;
+      return formatted;
+    }
+    return text;
+  };
+
+  const handlePhoneChange = (text) => {
+    const formattedPhone = formatPhoneNumber(text);
+    handleInputChange('phone', formattedPhone);
+
+
+    if (formattedPhone.replace(/\D+/g, '').length < 10) {
+      setPhoneError('Phone number must be 10 digits.');
+    } else {
+      setPhoneError('');
+    }
+  };
+
+  const handleDateChange = (event, selectedDate) => {
+    setShowDatePicker(false);
+    if (selectedDate) {
+      handleInputChange('date', selectedDate.toISOString().split('T')[0]); 
+    }
+  };
+
   const handleSave = () => {
-    // Here you would typically send the form data to a backend
     console.log('Form Data:', formData);
-    // Navigate to next step or show confirmation
   };
 
   return (
@@ -66,20 +97,29 @@ const App = () => {
         onChangeText={(text) => handleInputChange('fullName', text)}
       />
       
-      <TextInput
-        style={styles.input}
-        placeholder="Today's Date"
-        value={formData.date}
-        onChangeText={(text) => handleInputChange('date', text)}
-      />
+      <View style={styles.datePickerContainer}>
+        <Text>Date: {formData.date || "Not selected"}</Text>
+        <Button title="Pick a Date" onPress={() => setShowDatePicker(true)} />
+        {showDatePicker && (
+          <DateTimePicker
+            value={formData.date ? new Date(formData.date) : new Date()}
+            mode="date"
+            display="default"
+            onChange={handleDateChange}
+          />
+        )}
+      </View>
       
-      <TextInput
-        style={styles.input}
-        placeholder="Phone Number"
-        value={formData.phone}
-        onChangeText={(text) => handleInputChange('phone', text)}
-        keyboardType="phone-pad"
-      />
+      <View>
+        <TextInput
+          style={styles.input}
+          placeholder="Phone Number"
+          value={formData.phone}
+          onChangeText={handlePhoneChange}
+          keyboardType="phone-pad"
+        />
+        {phoneError ? <Text style={styles.errorText}>{phoneError}</Text> : null}
+      </View>
       
       <View style={styles.pickerContainer}>
         <Text>State of Residence</Text>
@@ -162,6 +202,15 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderWidth: 1,
     borderColor: '#ddd'
+  },
+  datePickerContainer: {
+    marginBottom: 20
+  },
+  errorText: {
+    color: 'red',
+    fontSize: 12,
+    marginTop: -5,
+    marginBottom: 10
   }
 });
 
