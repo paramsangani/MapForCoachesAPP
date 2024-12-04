@@ -1,7 +1,9 @@
 # MapAPP
 
 ## Overview
-MapAPP is a mobile application developed using Expo that [brief description of what the app does].
+MapAPP is a mobile application developed using Expo is a novel eLearning tool for youth sports coaches to 
+increase their knowledge regarding sports-related Musculoskeletal injuries and best injury prevention
+practices towards reducing injuries and enhancing performance in youth sport athletes. 
 
 ## Prerequisites
 - Node.js 
@@ -68,6 +70,7 @@ MapAPP/
 
 ## Demo
 Click the video to view the demo
+<br>
 [![MapAPP Demonstration](https://i9.ytimg.com/vi_webp/Y-WniNyOjO8/mqdefault.webp?v=674fc25e&sqp=CKyEv7oG&rs=AOn4CLBBBcyk1NiCL0J0tc0aDUvvbrPxmA)](https://youtu.be/Y-WniNyOjO8)
 
 ## Troubleshooting
