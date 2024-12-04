@@ -4,10 +4,10 @@
 MapAPP is a mobile application developed using Expo that [brief description of what the app does].
 
 ## Prerequisites
-- Node.js (version X.X.X or later)
-- npm (version X.X.X or later)
+- Node.js 
+- npm
 - Expo CLI
-- iOS or Android device/simulator
+- iOS (XCode) or Android (Android Simulator)
 
 ## Installation
 
@@ -66,6 +66,8 @@ MapAPP/
 - Similar to the website: https://mapforcoaches.net/
 - Saving responses by the user
 
+## Demo
+[![MapAPP Demonstration](https://youtu.be/Y-WniNyOjO8)](https://youtu.be/Y-WniNyOjO8)
 
 ## Troubleshooting
 - Ensure you have the latest version of Expo CLI
@@ -82,5 +84,3 @@ MapAPP/
 
 ## Contact
 [Param Sangani] - [param.sangani@slu.edu]
-
-Project Link: [https://github.com/yourusername/MapAPP](https://github.com/yourusername/MapAPP)
