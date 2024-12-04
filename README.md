@@ -67,6 +67,7 @@ MapAPP/
 - Saving responses by the user
 
 ## Demo
+Click the video to view the demo
 [![MapAPP Demonstration](https://i9.ytimg.com/vi_webp/Y-WniNyOjO8/mqdefault.webp?v=674fc25e&sqp=CKyEv7oG&rs=AOn4CLBBBcyk1NiCL0J0tc0aDUvvbrPxmA)](https://youtu.be/Y-WniNyOjO8)
 
 ## Troubleshooting
