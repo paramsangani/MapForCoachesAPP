@@ -67,7 +67,7 @@ MapAPP/
 - Saving responses by the user
 
 ## Demo
-[![MapAPP Demonstration](https://youtu.be/Y-WniNyOjO8)](https://youtu.be/Y-WniNyOjO8)
+[![MapAPP Demonstration](https://i9.ytimg.com/vi_webp/Y-WniNyOjO8/mqdefault.webp?v=674fc25e&sqp=CKyEv7oG&rs=AOn4CLBBBcyk1NiCL0J0tc0aDUvvbrPxmA)](https://youtu.be/Y-WniNyOjO8)
 
 ## Troubleshooting
 - Ensure you have the latest version of Expo CLI
